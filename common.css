@@ -7,26 +7,30 @@
 }
 
 body {
-    background-image: url('images/background.webp');
-    background-size: 20vw;
-    background-position: 0 calc(var(--pixel-size) * 12);
-
     image-rendering: -moz-crisp-edges;
     image-rendering: -webkit-crisp-edges;
     image-rendering: pixelated;
     image-rendering: crisp-edges; 
 
     margin: 0;
+
+    background-image: url('images/background.webp');
+    background-size: 20vw;
+    background-position: calc(var(--pixel-size) * 24) calc(var(--pixel-size) * 12);
+
     padding-top: calc(var(--pixel-size) * 11);
+    padding-left: calc(var(--pixel-size) * 23);
+    padding-right: calc(var(--pixel-size) * 24);
 }
 
-.main-box {
-    margin-left: calc(var(--pixel-size) * 47);
-    margin-right: calc(var(--pixel-size) * 48);
+@media (prefers-color-scheme: dark) {
+    :root {
+        filter: invert(1) hue-rotate(180deg);
+    }
 }
 
 .row {
-    width: calc(143 * var(--pixel-size));
+    width: calc(191 * var(--pixel-size));
     height: var(--row-height);
 
     padding: var(--pixel-size);
@@ -36,40 +40,45 @@ body {
 .row-box {
     background-repeat: no-repeat;
     background-size: 100%;
-    width: calc(143 * var(--pixel-size));
+    width: calc(191 * var(--pixel-size));
     height: var(--row-height);
 }
 
 .row-half-box {
     background-repeat: no-repeat;
-    background-size: calc(72 * var(--pixel-size));
-    width: calc(71 * var(--pixel-size));
+    background-size: calc(95 * var(--pixel-size));
+    width: calc(95 * var(--pixel-size));
     height: var(--row-height);
 }
 
 .cart {
-    background-image: url('images/mainbox.webp');
+    background-image: url('images/full-wide.webp');
 }
 
 .cart:hover {
-    background-image: url('images/mainbox-hover.webp');
+    background-image: url('images/full-wide-hover.webp');
 }
 
 .half-button {
-    background-image: url('images/button.webp');
-}
-
-.half-button:hover {
-    background-image: url('images/button-hover.webp');
+    background-image: url('images/picto-button.webp');
 }
 
 .half-button.left {
+    background-image: url('images/picto-button.webp');
     float: left;
     background-position: left;
 }
 
+.half-button.left:hover {
+    background-image: url('images/picto-hover.webp');
+}
+
 .half-button.right {
+    background-image: url('images/download-button.webp');
     float: right;
     background-position: right;
 }
 
+.half-button.right:hover {
+    background-image: url('images/download-hover.webp');
+}
