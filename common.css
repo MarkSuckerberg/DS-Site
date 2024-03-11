@@ -1,0 +1,75 @@
+/*
+    One background pixel is 100vw / (48 * 5) = 0.4166666666666667vw
+*/
+:root {
+    --pixel-size: calc(100vw / (48 * 5));
+    --row-height: calc(47 * var(--pixel-size));
+}
+
+body {
+    background-image: url('images/background.webp');
+    background-size: 20vw;
+    background-position: 0 calc(var(--pixel-size) * 12);
+
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges; 
+
+    margin: 0;
+    padding-top: calc(var(--pixel-size) * 11);
+}
+
+.main-box {
+    margin-left: calc(var(--pixel-size) * 47);
+    margin-right: calc(var(--pixel-size) * 48);
+}
+
+.row {
+    width: calc(143 * var(--pixel-size));
+    height: var(--row-height);
+
+    padding: var(--pixel-size);
+    padding-bottom: 0;
+}
+
+.row-box {
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: calc(143 * var(--pixel-size));
+    height: var(--row-height);
+}
+
+.row-half-box {
+    background-repeat: no-repeat;
+    background-size: calc(72 * var(--pixel-size));
+    width: calc(71 * var(--pixel-size));
+    height: var(--row-height);
+}
+
+.cart {
+    background-image: url('images/mainbox.webp');
+}
+
+.cart:hover {
+    background-image: url('images/mainbox-hover.webp');
+}
+
+.half-button {
+    background-image: url('images/button.webp');
+}
+
+.half-button:hover {
+    background-image: url('images/button-hover.webp');
+}
+
+.half-button.left {
+    float: left;
+    background-position: left;
+}
+
+.half-button.right {
+    float: right;
+    background-position: right;
+}
+
