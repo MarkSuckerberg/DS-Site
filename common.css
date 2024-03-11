@@ -6,6 +6,10 @@
     --row-height: calc(47 * var(--pixel-size));
 }
 
+body.dark-mode {
+    filter: invert(1) hue-rotate(180deg);
+}
+
 body {
     image-rendering: -moz-crisp-edges;
     image-rendering: -webkit-crisp-edges;
@@ -13,20 +17,33 @@ body {
     image-rendering: crisp-edges; 
 
     margin: 0;
+}
 
+.content {
     background-image: url('images/background.webp');
     background-size: 20vw;
     background-position: calc(var(--pixel-size) * 24) calc(var(--pixel-size) * 12);
 
-    padding-top: calc(var(--pixel-size) * 11);
-    padding-left: calc(var(--pixel-size) * 23);
-    padding-right: calc(var(--pixel-size) * 24);
+    margin: 0;
+    width: 100vw;
+    height: 100%;
+    z-index: -1;
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
+    body {
         filter: invert(1) hue-rotate(180deg);
     }
+
+    body.dark-mode {
+        filter: none;
+    }
+}
+
+main {
+    padding-top: calc(var(--pixel-size) * 11);
+    padding-left: calc(var(--pixel-size) * 23);
+    padding-right: calc(var(--pixel-size) * 24);
 }
 
 .row {
@@ -44,11 +61,8 @@ body {
     height: var(--row-height);
 }
 
-.row-half-box {
-    background-repeat: no-repeat;
-    background-size: calc(95 * var(--pixel-size));
+.row-box.half {
     width: calc(95 * var(--pixel-size));
-    height: var(--row-height);
 }
 
 .cart {
@@ -59,26 +73,51 @@ body {
     background-image: url('images/full-wide-hover.webp');
 }
 
-.half-button {
-    background-image: url('images/picto-button.webp');
-}
-
-.half-button.left {
+.picto-button {
     background-image: url('images/picto-button.webp');
     float: left;
     background-position: left;
 }
 
-.half-button.left:hover {
+.picto-button:hover {
     background-image: url('images/picto-hover.webp');
 }
 
-.half-button.right {
+.download-button {
     background-image: url('images/download-button.webp');
     float: right;
     background-position: right;
 }
 
-.half-button.right:hover {
+.download-button:hover {
     background-image: url('images/download-hover.webp');
+}
+
+.footer-button {
+    background-size: 100%;
+    height: calc(11 * var(--pixel-size));
+    width: calc(11 * var(--pixel-size));
+
+    margin: calc(var(--pixel-size) * 6);
+    margin-bottom: 0;
+
+    cursor: pointer;
+}
+
+.footer-button.light {
+    background-image: url('images/light.webp');
+    float: left;
+}
+
+.footer-button.menu {
+    background-image: url('images/menu.webp');
+    height: calc(21 * var(--pixel-size));
+    width: calc(21 * var(--pixel-size));
+    margin: auto;
+    margin-top: calc(2 * var(--pixel-size));
+}
+
+.footer-button.alarm {
+    background-image: url('images/alarm.webp');
+    float: right;
 }

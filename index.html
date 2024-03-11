@@ -7,14 +7,31 @@
 		<title>DS Theme</title>
 	</head>
 	<body>
-		<div class="row">
-			<a href="game"><div class="row-box cart"></div></a>
+		<div class="content">
+			<main>
+				<div class="row">
+					<a href="game"><div class="row-box cart"></div></a>
+				</div>
+
+				<div class="row">
+					<a href="button1"><div class="row-box half picto-button"></div></a>
+					<a href="button2"><div class="row-box half download-button"></div></a>
+				</div>
+			</main>
+
+			<footer>
+				<div class="footer-button light" onclick="toggleDarkMode()"></div>
+				<a href="uptime"><div class="footer-button alarm"></div></a>
+				<div class="footer-button menu"></div>
+			</footer>
 		</div>
 
-		<div class="row">
-			<a href="button1"><div class="row-half-box half-button left"></div></a>
-			<a href="button2"><div class="row-half-box half-button right"></div></a>
-		</div>
+		<script>
+			function toggleDarkMode() {
+				var body = document.body;
+				body.classList.toggle("dark-mode");
+			}
+		</script>
 	</body>
 </html>
 
